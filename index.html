@@ -464,6 +464,18 @@
                     <!-- One card end -->
                 </div>
                 <!-- SHOWS TO TRY SECTION END-->
+
+
+                <!-------AJAX HW--------->
+                <div class="complete-albums d-flex justify-content-between align-items-center mt-3">
+                  <div class="row"><h3>Albums</h3></div>
+                
+
+
+                </div>
+
+
+
                 </div>
           </div>
         </div>
@@ -663,7 +675,7 @@
 
 
 
-                    <script>
+<script>
 
 window.onload = () => {
   fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem", {
@@ -674,11 +686,43 @@ window.onload = () => {
 	}
 })
 .then((response) => response.json())
-.then((data) => console.log(data)) 
+//.then(() => console.log(data)) 
+.then(data => {
+
+        console.log(data)
+
+for (let i = 0; i < data.data.length; i++) {
+          let obj = data.data[i]
+
+
+
+    let contains = document.createElement("div")
+
+    contains.classList.add("row")
+    contains.innerHTML = `
+    <div class="col-1"> <img src="${obj.album.cover_small}" alt="..."> </div> 
+    <div class="col-1"><span>${obj.artist.name}</span></div>
+    <div class="col-1"><span>${obj.title_short}</span></div>
+    <div class="col-1"><span>${obj.type}</span></div>
+    <div class="col-1"><span>${obj.duration}</span></div>
+    <div class="col-1"><span>${obj.artist.id}</span></div>
+    `
     
+    document.querySelector(".complete-albums").appendChild(contains) 
+  
+  }
+})
 .catch(err => {
 	console.error(err);
-})
+}
+)}
+
+
+
+
+/*
+
+
   fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=metallica", {
 	"method": "GET",
 	"headers": {
@@ -718,8 +762,7 @@ window.onload = () => {
 
 
 }
-
-    console.log("fuck")
+*/
 
                     </script>
 
