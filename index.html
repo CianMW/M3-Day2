@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <title>Spotifour</title>
+
   </head>
   <body>
     
@@ -662,6 +663,71 @@
 
 
 
+                    <script>
+
+window.onload = () => {
+  fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+		"x-rapidapi-key": "c0dbb0022bmshdac5721511fc351p152251jsndd5434dfa369"
+	}
+})
+.then((response) => response.json())
+.then((data) => console.log(data)) 
+    
+.catch(err => {
+	console.error(err);
+})
+  fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=metallica", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+		"x-rapidapi-key": "c0dbb0022bmshdac5721511fc351p152251jsndd5434dfa369"
+	}
+})
+.then((response) => response.json())
+.then((data) => console.log(data)) 
+    
+.catch(err => {
+	console.error(err);
+})
+  fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=behemoth", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+		"x-rapidapi-key": "c0dbb0022bmshdac5721511fc351p152251jsndd5434dfa369"
+	}
+})
+.then((response) => response.json())
+.then((data) => console.log(data)) 
+    
+.catch(err => {
+	console.error(err);
+})
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+    console.log("fuck")
+
+                    </script>
+
+
+
+
+
+
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script
@@ -674,5 +740,7 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
+
+
   </body>
 </html>
